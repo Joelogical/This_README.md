@@ -52,3 +52,32 @@ function writeToFile(fileName, data) {
         }
     });
 }
+
+writeToFile('example.txt', 'Hello, world!');
+
+function generateREADME(data) {
+    return `
+# ${data.title}
+
+## Description
+${data.description}
+
+## Installation
+${data.installation}
+
+## Usage
+${data.usage}
+
+## Contributing
+${data.contributing}
+
+## Tests
+${data.tests}
+
+## License
+${data.license}
+`;
+}
+
+// Call the init function to start the application
+init();
