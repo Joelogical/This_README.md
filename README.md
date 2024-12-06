@@ -67,28 +67,27 @@ After installing the project, you can use the README generator tool by running:
    node index.js
    ```
 
-    
- 
 3. Install the required dependencies:
     ```bash
     npm install
     ```
 
  After installing the project, you can use the README generator tool by running:
- ```bash
- node index.js
-
+   ```bash
+   node index.js
+   ```
  This will prompt you for various pieces of information, such as the title, description, license type, and more. Based on your responses, it will generate a README.md file for your project.
 
  Example Command:
+ ```bash
  $ node index.js
  Enter project title: My Amazing Project
  Enter project description: This project automates the creation of README files.
  Enter project license: MIT
  ...
  After answering all prompts, a README.md file will be generated in the root directory of the project.
+```
 
-````
 ## Contributing
 1. Fork the repository.
 

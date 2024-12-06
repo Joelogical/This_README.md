@@ -1,5 +1,5 @@
 const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown")
+const generateMarkdown = require("./utils/generateMarkdown").default;
 const inquirer = require("inquirer");
 
 // Array of questions for user input
@@ -35,9 +35,9 @@ const questions = [
     message: "Please provide the test instructions for your project:",
   },
   {
-    type:"list",
-    name:"license",
-    choices:["MIT","ISC","GNU","GPL"]
+    type: "list",
+    name: "license",
+    choices: ["MIT", "ISC", "GNU", "GPL"]
   },
   {
     type: "input",
@@ -51,23 +51,26 @@ const questions = [
   }
 ];
 
-function init(){
-inquirer
-  .prompt(questions)
-  .then((answers) => {
-    console.log(answers);
-    return generateMarkdown(answers)
-  }).then(readmeContent => {
-    writeToFile("OUTPUT.md",readmeContent)
-  })
-  .catch((error) => {
-    console.error("Error during prompting:", error);
-  });
+function init() {
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      console.log(answers); // You can comment this line after confirming
+      // Generate the markdown content based on answers
+      return generateMarkdown(answers);
+    })
+    .then((readmeContent) => {
+      // Corrected writeToFile usage with the correct content variable
+      writeToFile("README.md", readmeContent);
+    })
+    .catch((error) => {
+      console.error("Error during prompting:", error);
+    });
 }
 
-
-//Function to write README file
+// Function to write the README file
 function writeToFile(fileName, data) {
+  // Writing the content to README.md
   fs.writeFile(fileName, data, (err) => {
     if (err) {
       console.error("Error writing to file:", err);
@@ -76,9 +79,6 @@ function writeToFile(fileName, data) {
     }
   });
 }
-
-// writeToFile("example.txt", "Hello, world!");
-
 
 // Call the init function to start the application
 init();
