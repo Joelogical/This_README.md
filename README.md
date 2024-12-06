@@ -118,3 +118,7 @@ For any inquiries, please email me at: (jmsmith.coding@gmail.com)
 
 ## GitHub
 You can find the project's repository on GitHub here: https://github.com/Joelogical/This_README.md/blob/main/Develop/README.md#this_readmemd
+
+## Walkthrough Video
+
+[Watch the walkthrough video here](https://drive.google.com/file/d/1_spdhUi8GH4OULQlrx02gIR7Rnarv8oY/view?usp=drive_link)
